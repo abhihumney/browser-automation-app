@@ -28,7 +28,11 @@ export default function RootLayout({
       className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
     >
       <body>
-        <ClerkProvider afterSignOutUrl="/sign-in" appearance={{ theme: shadcn }}>
+        <ClerkProvider
+          afterSignOutUrl="/sign-in"
+          appearance={{ theme: shadcn }}
+          taskUrls={{ "choose-organization": "/choose-organization" }}
+        >
           <ThemeProvider>
             {children}
             <Toaster />

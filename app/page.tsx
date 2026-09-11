@@ -1,13 +1,16 @@
 "use client"
 
-import { Show, SignIn, UserButton } from "@clerk/nextjs"
+import { OrganizationSwitcher, Show, SignIn, UserButton } from "@clerk/nextjs"
 
 export default function Page() {
   return (
     <div className="flex min-h-svh flex-col p-6">
       <div className="flex justify-end">
         <Show when="signed-in">
-          <UserButton />
+          <div className="flex flex-col items-end gap-2">
+            <UserButton />
+            <OrganizationSwitcher hidePersonal />
+          </div>
         </Show>
       </div>
       <Show when="signed-out">
